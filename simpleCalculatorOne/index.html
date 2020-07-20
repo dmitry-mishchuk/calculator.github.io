@@ -7,40 +7,41 @@
     <script type="text/javascript" src="./script/controler.js"></script>
   </head>
   <body>
+    a
     <div class="main">
       <form name="form">
         <input class="textview" name="textview" value="">
       </form>
       <table>
         <tr>
+          <td><input class="button" type="button" value="C" onclick="clean()"></td>
+          <td><input class="button" type="button" value="<<" onclick="back()"></td>
+          <td><input class="button" type="button" value="*" onclick="insert(value)"></td>
+          <td><input class="button" type="button" value="/" onclick="insert(value)"></td>
+        </tr>
+        <tr>
           <td><input class="button" type="button" value="7" onclick="insert(value)"></td>
           <td><input class="button" type="button" value="8" onclick="insert(value)"></td>
           <td><input class="button" type="button" value="9" onclick="insert(value)"></td>
-          <td><input class="button" type="button" value="C"></td>
+          <td><input class="button" type="button" value="-" onclick="insert(value)"></td>
+
         </tr>
         <tr>
           <td><input class="button" type="button" value="4" onclick="insert(value)"></td>
           <td><input class="button" type="button" value="5" onclick="insert(value)"></td>
           <td><input class="button" type="button" value="6" onclick="insert(value)"></td>
-          <td><input class="button" type="button" value="/" onclick="insert(value)"></td>
+          <td rowspan="2"><input class="button" style="height:106px" type="button" value="+" onclick="insert(value)"></td>
         </tr>
         <tr>
           <td><input class="button" type="button" value="1" onclick="insert(value)"></td>
           <td><input class="button" type="button" value="2" onclick="insert(value)"></td>
           <td><input class="button" type="button" value="3" onclick="insert(value)"></td>
-          <td><input class="button" type="button" value="*" onclick="insert(value)"></td>
+
         </tr>
         <tr>
           <td><input class="button" type="button" value="0" onclick="insert(value)"></td>
           <td><input class="button" type="button" value="." onclick="insert(value)"></td>
-          <td><input class="button" type="button" value="=" onclick="equal()"></td>
-          <td><input class="button" type="button" value="-" onclick="insert(value)"></td>
-        </tr>
-        <tr>
-          <td><input class="button" type="button" value="A" onclick="insert(value)"></td>
-          <td><input class="button" type="button" value="B" onclick="insert(value)"></td>
-          <td><input class="button" type="button" value="C" onclick="insert(value)"></td>
-          <td><input class="button" type="button" value="+" onclick="insert(value)"></td>
+          <td colspan="2"><input class="button" style="width:106px"type="button" value="=" onclick="equal()"></td>
         </tr>
       </table>
     </div>
