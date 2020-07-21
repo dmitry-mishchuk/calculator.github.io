@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .mainCalculator{
+      width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      backgaund-color: yellow;
+      padding: 20px;
+      border: 1px solid green;
+
+    }
+    .mainCalculator .buttonContainer button {
+      width: 50px;
+      height: 50px;
+      margin: 20px;
+    }
+    .mainCalculator .inputContainer .inputBlock {
+      display: inline-block;
+      padding: 10px;
+    }
+    .mainCalculator .inputContainer .inputBlock label {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="mainCalculator">
+      <div class="inputContainer">
+        <div class="inputBlock">
+          <label for="">Number 1</label>
+          <input id="numberOne" type="number" name="" value="">
+        </div>
+        <div class="inputBlock">
+          <label for="">Number 2</label>
+          <input id="numberTwo" type="number" name="" value="">
+        </div>
+      </div>
+      <div class="">
+        <hr/>
+      </div>
+      <div class="buttonContainer">
+        <button type="button" id="buttonPlus" name="button">+</button>
+        <button type="button" name="button">-</button>
+        <button type="button" name="button">/</button>
+        <button type="button" name="button">*</button>
+      </div>
+  </div>
+
+  <script type="text/javascript" src="./script/controler.js"></script>
+</body>
+</html>
