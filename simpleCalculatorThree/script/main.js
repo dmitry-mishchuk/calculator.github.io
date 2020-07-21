@@ -3,7 +3,7 @@ var my_div = newDiv = null;
 
 function addTegElement(type, count) {
   var newDiv = document.createElement("div");
-  var content = newDiv.innerHTML = createInputTeg(type, 1);
+  var content = newDiv.innerHTML = createInputTeg(type, count);
   document.getElementById("wraper").innerHTML = content;
   //document.body.insertBefore(newDiv, my_div);
 }
