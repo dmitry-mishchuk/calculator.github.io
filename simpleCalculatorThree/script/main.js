@@ -1,45 +1,36 @@
-const output = document.querySelector('output')
+document.body.onload = () => {
+  let div = document.createElement('div');
+  div.className = "inputContainer";
+  div.innerHTML = '<input class="inputArea" type="text"/>';
+  document.querySelector('.wraper').appendChild(div);
+  document.querySelector('.inputArea').value = '0';
+  div = document.createElement('div');
+  div.className = "buttonContainer";
+  document.querySelector('.wraper').appendChild(div);
+//document.querySelector('.alert').appendChild(div);
 
-const div = document.createElement('div')
-div.classList.add('keyboard')
-document.querySelector('.calculator').appendChild(div)
+  '7 8 9 * 4 5 6 / 1 2 3 - 0 . = +'.split(' ').map(symbol => {
+    document.querySelector('.buttonContainer').insertAdjacentHTML('beforeend', `<button class="buttonItem" value="${symbol}">${symbol}</button>`)
+  })
+  document.querySelectorAll('.buttonItem').forEach(button => {
+    button.addEventListener('click', onButtonClick)
+  })
 
-'C CE % / 7 8 9 * 4 5 6 - 1 2 3 + 0 ( ) ='.split(' ')
-    .map(symbol => {
-        div.insertAdjacentHTML('beforeend', `<button value="${symbol}">${symbol}</button>`)
-    })
 
-div.addEventListener('click', e => {
-    if(e.target.tagName === 'BUTTON') {
-        calc(e.target.value)
-    }
-})
 
-document.addEventListener('keydown', e => {
-    if ((e.key).match(/[0-9%\/*\-+\(\)=]|Backspace|Enter/)) calc(e.key)
-})
+};
+const onButtonClick = (event) => {
+  let buttonText = event.currentTarget.innerHTML;
+  let temp;
+  if (buttonText === '+'){
+    temp = parseFloat(buttonText);
+  } else if (buttonText === '-') {
 
-function calc(value) {
-    if (value.match(/=|Enter/)) {
-        try {
-            if (output.textContent !== '') {
-                output.textContent = Math.trunc(math.evaluate(output.textContent))
-            }
-        } catch {
-            let oldValue = output.textContent
-            let newValue = 'недопустимое выражение'
+  } else if (buttonText === '/') {
 
-            output.textContent = newValue
-            const timer = setTimeout(() => {
-                output.textContent = oldValue
-                clearTimeout(timer)
-            }, 1500)
-        }
-    } else if (value === 'C') {
-        output.textContent = ''
-    } else if (value.match(/CE|Backspace/)) {
-        output.textContent = output.textContent.substring(0, output.textContent.length - 1)
-    } else {
-        output.textContent += value
-    }
+  } else if (buttonText === '*') {
+
+  }
+  document.querySelector('.inputArea').value =
+      document.querySelector('.inputArea').value + buttonText;
 }

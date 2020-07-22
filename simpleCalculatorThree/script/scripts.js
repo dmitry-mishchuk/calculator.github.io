@@ -22,3 +22,5 @@ function addElement(type) {
 }
 
 //console.log(createInputTeg('button', 1));
+//document.getElementById("wraper").append(div);
+//document.getElementById("alert").insertAdjacentHTML('beforebegin', '<p>Привет</p>');
