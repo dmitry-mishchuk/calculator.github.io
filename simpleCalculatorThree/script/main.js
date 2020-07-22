@@ -1,24 +1,45 @@
-//document.body.onload = addElement;
-var my_div = newDiv = null;
+const output = document.querySelector('output')
 
-function addTegElement(type, count) {
-  var newDiv = document.createElement("div");
-  var content = newDiv.innerHTML = createInputTeg(type, count);
-  document.getElementById("wraper").innerHTML = content;
-  //document.body.insertBefore(newDiv, my_div);
+const div = document.createElement('div')
+div.classList.add('keyboard')
+document.querySelector('.calculator').appendChild(div)
+
+'C CE % / 7 8 9 * 4 5 6 - 1 2 3 + 0 ( ) ='.split(' ')
+    .map(symbol => {
+        div.insertAdjacentHTML('beforeend', `<button value="${symbol}">${symbol}</button>`)
+    })
+
+div.addEventListener('click', e => {
+    if(e.target.tagName === 'BUTTON') {
+        calc(e.target.value)
+    }
+})
+
+document.addEventListener('keydown', e => {
+    if ((e.key).match(/[0-9%\/*\-+\(\)=]|Backspace|Enter/)) calc(e.key)
+})
+
+function calc(value) {
+    if (value.match(/=|Enter/)) {
+        try {
+            if (output.textContent !== '') {
+                output.textContent = Math.trunc(math.evaluate(output.textContent))
+            }
+        } catch {
+            let oldValue = output.textContent
+            let newValue = 'недопустимое выражение'
+
+            output.textContent = newValue
+            const timer = setTimeout(() => {
+                output.textContent = oldValue
+                clearTimeout(timer)
+            }, 1500)
+        }
+    } else if (value === 'C') {
+        output.textContent = ''
+    } else if (value.match(/CE|Backspace/)) {
+        output.textContent = output.textContent.substring(0, output.textContent.length - 1)
+    } else {
+        output.textContent += value
+    }
 }
-
-function createInputTeg(type, value){
-  return `<input type="${type}" value="${value}">`
-}
-
-
-
-function addElement(type) {
-  for (var i = 0; i < 5; i++) {
-    addTegElement(type, i)
-    document.body.insertBefore(newDiv, my_div);
-  }
-}
-
-//console.log(createInputTeg('button', 1));
